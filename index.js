@@ -11,7 +11,7 @@ exports.createClient = function() {
     acc[command] = function() { 
       var args = _.toArray(arguments);
       return new Promise(function(resolve, reject) {
-        client[command].apply(redis, args.concat([function(err, data) {
+        client[command].apply(client, args.concat([function(err, data) {
           if(err) {
             reject(err);
           }
