@@ -11,7 +11,7 @@ exports.createClient = function() {
     acc[command] = function() { 
       var args = _.toArray(arguments);
       return new Promise(function(resolve, reject) {
-        redis[command].apply(redis, args.concat([function(err, data) {
+        client[command].apply(redis, args.concat([function(err, data) {
           if(err) {
             reject(err);
           }
