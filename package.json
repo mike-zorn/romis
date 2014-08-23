@@ -4,7 +4,7 @@
   "description": "Redis with promises",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,16 @@
   "bugs": {
     "url": "https://github.com/apechimp/romis/issues"
   },
+  "contributors": [
+    "Andreas Pizsa (http://github.com/AndreasPizsa)"
+  ],
   "homepage": "https://github.com/apechimp/romis",
   "dependencies": {
     "bluebird": "^1.2.4",
     "lodash": "^2.4.1",
     "redis": "^0.10.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4"
   }
 }
