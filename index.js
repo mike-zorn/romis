@@ -2,13 +2,17 @@ var redis = require('redis'),
     _ = require('lodash'),
     Promise = require('bluebird');
 
+exports.fromRedis = function(client)
+{
+  var allFunctions = _.functions(client);
 
-exports.createClient = function() {
-  var client = redis.createClient.apply(redis, arguments),
-      redis_commands = _.keys(Object.getPrototypeOf(client));
+  var result= Object.create(client);
+  result._redis = client;
 
-  return _.reduce(redis_commands, function(acc, command) {
-    acc[command] = function() { 
+  _.each(allFunctions, function(command) {
+    if(command.search(/^[A-Z]+$/)===-1) return;
+
+    result[command] = result[command.toLowerCase()] = function() {
       var args = _.toArray(arguments);
       return new Promise(function(resolve, reject) {
         client[command].apply(client, args.concat([function(err, data) {
@@ -21,6 +25,13 @@ exports.createClient = function() {
         }]));
       });
     };
-    return acc;
-  }, {});
-};
+  });
+
+  return result;
+}
+
+exports.createClient = function()
+{
+  var client = redis.createClient.apply(redis, arguments);
+  return exports.fromRedis(client);
+}
