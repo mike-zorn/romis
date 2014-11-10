@@ -1,14 +1,16 @@
 romis
 =====
 
+[![Build Status](https://travis-ci.org/apechimp/romis.png?branch=master)](https://travis-ci.org/apechimp/romis)
+
 [node_redis](https://github.com/mranney/node_redis) but with promises. This
 exposes the exact same API as `node_redis`, but all the redis commands don't
 take callbacks and instead return promises.
 
-Install with:
-``` bash
-npm install --save romis
-```
+Installation
+------------
+
+[![npm install --save romis](https://nodei.co/npm/romis.png)](https://npmjs.org/package/romis)
 
 Usage
 =====
