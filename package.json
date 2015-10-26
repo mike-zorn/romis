@@ -25,11 +25,11 @@
   ],
   "homepage": "https://github.com/apechimp/romis",
   "dependencies": {
-    "bluebird": "^1.2.4",
-    "lodash": "^2.4.1",
-    "redis": "^0.10.1"
+    "bluebird": "^2.10.2",
+    "lodash": "^3.10.1",
+    "redis": "^2.2.5"
   },
   "devDependencies": {
-    "mocha": "^1.21.4"
+    "mocha": "^2.3.3"
   }
 }
