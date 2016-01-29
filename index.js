@@ -4,7 +4,7 @@ var redis = require('redis'),
 
 exports.fromRedis = function(client)
 {
-  var allFunctions = _.functions(client);
+  var allFunctions = _.functionsIn(client);
 
   var result= Object.create(client);
   result._redis = client;
