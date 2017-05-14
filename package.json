@@ -30,6 +30,6 @@
     "redis": "^2.2.5"
   },
   "devDependencies": {
-    "mocha": "^3.0.2"
+    "mocha": "^3.4.0"
   }
 }
