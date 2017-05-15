@@ -1,6 +1,8 @@
 romis
 =====
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/apechimp/romis.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/apechimp/romis.png?branch=master)](https://travis-ci.org/apechimp/romis)
 
 [node_redis](https://github.com/mranney/node_redis) but with promises. This
