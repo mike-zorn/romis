@@ -25,7 +25,7 @@
   ],
   "homepage": "https://github.com/apechimp/romis",
   "dependencies": {
-    "bluebird": "^3.0.0",
+    "bluebird": "3.5.3",
     "lodash": "^4.0.1",
     "redis": "^2.2.5"
   },
